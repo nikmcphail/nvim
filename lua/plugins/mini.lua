@@ -5,7 +5,7 @@ return {
 	config = function()
 		local misc = require("mini.misc")
 		-- Set colorscheme
-		vim.cmd.colorscheme("miniwinter")
+		vim.cmd.colorscheme("minispring")
 
 		-- Common configuration presets.
 		require("mini.basics").setup({
@@ -48,6 +48,7 @@ return {
 		local add_marks = function()
 			MiniFiles.set_bookmark("c", vim.fn.stdpath("config"), { desc = "Config" })
 			MiniFiles.set_bookmark("w", vim.fn.getcwd, { desc = "Working directory" })
+			MiniFiles.set_bookmark("s", vim.fn.expand("~/Documents/Screenplays/"), { desc = "Screenplays" })
 		end
 		Config.new_autocmd("User", "MiniFilesExplorerOpen", add_marks, "Add bookmarks")
 
