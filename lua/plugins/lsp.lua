@@ -24,6 +24,8 @@ return {
 					},
 				},
 			},
+			rust_analyzer = {},
+			zls = {},
 		}
 
 		for server, config in pairs(servers) do

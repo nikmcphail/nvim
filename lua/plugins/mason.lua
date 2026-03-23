@@ -8,9 +8,9 @@ return {
 		require("mason").setup({
 			ui = {
 				icons = {
-					package_installed = "󰄬",
-					package_pending = "󱦰",
-					package_uninstalled = "",
+					package_installed = Config.mason_signs.INSTALLED,
+					package_pending = Config.mason_signs.PENDING,
+					package_uninstalled = Config.mason_signs.UNINSTALLED,
 				},
 				border = "single",
 			},
@@ -20,6 +20,9 @@ return {
 			ensure_installed = {
 				"lua-language-server",
 				"stylua",
+				"rust-analyzer",
+				"zls",
+				"fish-lsp",
 			},
 			auto_update = true,
 			run_on_start = true,
