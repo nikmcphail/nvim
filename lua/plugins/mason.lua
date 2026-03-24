@@ -1,6 +1,5 @@
 return {
 	"mason-org/mason.nvim",
-	lazy = true,
 	dependencies = {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
@@ -26,6 +25,7 @@ return {
 			},
 			auto_update = true,
 			run_on_start = true,
+			auto_install = true,
 			start_delay = 3000,
 			debounce_hours = 5,
 		})

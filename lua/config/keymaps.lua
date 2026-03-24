@@ -75,3 +75,9 @@ nmap_leader("ms", "<Cmd>lua MiniMap.toggle_side()<CR>", "Swap side")
 -- Git
 nmap_leader("gg", "<Cmd>Neogit kind=vsplit<cr>", "Open git")
 nmap_leader("gc", "<Cmd>Neogit commit<cr>", "Commit")
+
+-- Mason
+nmap_leader("M", "<Cmd>Mason<cr>", "Open Mason")
+
+-- Lazy
+nmap_leader("L", "<Cmd>Lazy<cr>", "Open Lazy")
