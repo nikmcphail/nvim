@@ -35,6 +35,28 @@ return {
 			vim.lsp.enable(server)
 		end
 
+		Config.new_autocmd("FileType", "sourcepawn", function(args)
+			local fname = vim.api.nvim_buf_get_name(args.buf)
+			vim.lsp.start({
+				name = "sourcepawn_studio",
+				cmd = { vim.fn.expand("~/.local/bin/sourcepawn-studio") },
+				root_dir = vim.fs.dirname(
+					vim.fs.find({ ".git", "addons", "scripting" }, { upward = true, path = fname })[1]
+				) or vim.fs.dirname(fname),
+				settings = {
+					SourcePawnLanguageServer = {
+						compiler = {
+							onSave = false,
+						},
+						includeDirectories = {
+							vim.fn.expand("~/.local/share/sourcemod/include"),
+						},
+					},
+				},
+				capabilities = require("blink.cmp").get_lsp_capabilities(),
+			})
+		end, "SourcePawn-Studio")
+
 		local diagnostics = {
 			underline = true,
 			update_in_insert = false,
